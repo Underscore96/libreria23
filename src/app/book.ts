@@ -1,7 +1,7 @@
 export interface Book {
     title: string
     author: string
-    isbn: number
-    imageUrl: string
+    id: number
     description: string
+    imageUrl: string
 }

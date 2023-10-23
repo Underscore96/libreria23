@@ -1,6 +1,11 @@
-<ul *ngIf="books.length > 0">
-    <li *ngFor="let book of books">
-      <img [src]="book.imgageUrl" [alt]="book.title">
-    </li>
-  </ul>
-  <h1 *ngIf="books.length === 0">Add Books to see them here</h1>
+<div class="card-container">
+  <div class="card" *ngFor="let book of books">
+    <img [src]="book.imageUrl" class="card-img" alt="{{ book.title }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ book.title }}</h5>
+      <p class="card-text">Autore: {{ book.author }}</p>
+      <button type="button" class="btn btn-outline-danger btn-spacing" (click)="removeBook(book)">Remove</button>
+      <button type="button" class="btn btn-outline-secondary btn-spacing" (click)="navigateToDetail(book)">Detail</button>
+    </div>
+  </div>
+</div>

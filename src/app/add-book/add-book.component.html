@@ -5,15 +5,15 @@
       <form [formGroup]="addForm" (submit)="addBook()">
         <mat-form-field>
           <mat-label>Author</mat-label>
-          <input matInput type="text" formName="author">
+          <input matInput type="text" formControlName="author">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Title</mat-label>
-          <input matInput type="text" formName="title">
+          <input matInput type="text" formControlName="title">
         </mat-form-field>
         <mat-form-field>
           <mat-label>Description</mat-label>
-          <input matInput type="text" formName="description">
+          <input matInput type="text" formControlName="description">
         </mat-form-field>
         <button mat-raised-button class="bttn" color="primary">Add Book</button>
       </form>
