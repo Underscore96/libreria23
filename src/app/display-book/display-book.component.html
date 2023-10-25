@@ -1,5 +1,10 @@
+<app-search-bar (searchTermChange)="applySearchFilter($event)"></app-search-bar>
+
+
+
+
 <div class="card-container">
-  <div class="card" *ngFor="let book of books">
+  <div class="card" *ngFor="let book of filteredBooks">
     <img [src]="book.imageUrl" class="card-img" alt="{{ book.title }}">
     <div class="card-body">
       <h5 class="card-title">{{ book.title }}</h5>
@@ -8,4 +13,8 @@
       <button type="button" class="btn btn-outline-secondary btn-spacing" (click)="navigateToDetail(book)">Detail</button>
     </div>
   </div>
+
+
 </div>
+
+

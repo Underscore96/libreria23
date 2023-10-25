@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Book } from '../book';
 import { BookServiceService } from '../book-service.service';
 import { Router } from '@angular/router';
@@ -10,29 +10,38 @@ import { Router } from '@angular/router';
 })
 
 export class SearchBarComponent implements OnInit {
+  @Output() searchTermChange = new EventEmitter<string>();
   books: Book[] = [];
-  searchTerm: string = '';
   filteredBooks: Book[] = [];
+  searchTerm: string = '';
 
-  constructor(private bookService: BookServiceService, public router: Router) {}
+  constructor(private bookServiceService: BookServiceService, private router: Router) {}
+
 
   ngOnInit() {
-    this.bookService.getBooks().subscribe(books => {
+    this.bookServiceService.getBooks().subscribe(books => {
       this.books = books;
+      this.filteredBooks = this.books;
     });
   }
 
-
   filterBooks() {
+    this.searchTermChange.emit(this.searchTerm);
     if (!this.searchTerm) {
- 
       this.filteredBooks = this.books;
     } else {
-
       this.filteredBooks = this.books.filter(book =>
         book.title.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     }
   }
-}
 
+
+
+
+
+
+
+
+
+}

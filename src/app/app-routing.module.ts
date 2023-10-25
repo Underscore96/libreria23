@@ -21,9 +21,9 @@ const routes: Routes = [
     {
       path: '**',
       redirectTo: 'display'
-    }
+    },
+    
   ];
-  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,20 +1,44 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-  }
-  
-  .card {
-    width: 400px; 
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
 
-  .cust-form {
-    background-color: rgba(55, 55, 56, 0.825); 
-    padding: 16px; 
-  }
+.card {
+  width: 500px;
+}
 
-  .bttn{
-    padding: 16px;
-  }
-  
+.card-title {
+  text-align: center;
+}
+
+.cust-form {
+  background-color: rgba(55, 55, 56, 0.825);
+  padding: 24px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.description-field {
+  width: 100%;
+  margin-bottom: 40px; 
+  height: 200px;
+}
+
+
+.bttn {
+  display: block;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bttn:hover {
+  background-color: #666;
+  color: #fff;
+}

@@ -15,6 +15,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { DetailComponent } from './detail/detail.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
