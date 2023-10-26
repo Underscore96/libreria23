@@ -25,8 +25,19 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
+  // filterBooks() {
+  //   this.searchTermChange.emit(this.searchTerm);
+  //   if (!this.searchTerm) {
+  //     this.filteredBooks = this.books;
+  //   } else {
+  //     this.filteredBooks = this.books.filter(book =>
+  //       book.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+  //     );
+  //   }
+  // }
+
+
   filterBooks() {
-    this.searchTermChange.emit(this.searchTerm);
     if (!this.searchTerm) {
       this.filteredBooks = this.books;
     } else {
@@ -34,6 +45,11 @@ export class SearchBarComponent implements OnInit {
         book.title.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     }
+  }
+
+
+  goToBook(book: Book) {
+    this.router.navigate(['detail', book.id]);
   }
 
 

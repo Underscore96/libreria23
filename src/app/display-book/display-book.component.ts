@@ -13,6 +13,7 @@ export class DisplayBookComponent implements OnInit {
 
   filteredBooks: Book[] = [];
   searchTerm: string = '';
+  public isAscendingSort: Boolean = true;
 
   constructor(private bookService: BookServiceService, public router: Router) {}
 
@@ -40,4 +41,25 @@ export class DisplayBookComponent implements OnInit {
       book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
+
+
+ 
+
+  // sortBooks() {
+  //   this.isAscendingSort = !this.isAscendingSort;
+  //   this.books.sort((item1: any, item2: any) => this.compare(item1, item2));
+  // }
+
+  // compare(item1: any, item2: any): number {
+  //   let compValue = 0;
+  //   compValue = item1.title.localeCompare(item2.title, 'en', {
+  //     sensitivity: 'base'
+  //   });
+  //   if (!this.isAscendingSort) {
+  //     compValue = compValue * -1;
+  //   }
+  //   return compValue;
+  // }
+
+
 }

@@ -1,4 +1,15 @@
-<div class="search-bar" style="position: absolute; top: 10px; right: 10px;">
+<!-- <div class="search-bar" style="position: absolute; top: 10px; right: 10px;">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="filterBooks()"
+      placeholder="Search by title"
+    />
+    <button mat-raised-button (click)="filterBooks()">Cerca</button>
+   -->
+
+
+   <div class="search-bar" style="position: absolute; top: 10px; right: 10px;">
     <input
       type="text"
       [(ngModel)]="searchTerm"
@@ -7,3 +18,9 @@
     />
     <button mat-raised-button (click)="filterBooks()">Cerca</button>
   
+    <ul>
+      <li *ngFor="let book of filteredBooks">
+        <a [routerLink]="['/detail', book.id]">{{book.title}}</a>
+      </li>
+    </ul>
+  </div>
