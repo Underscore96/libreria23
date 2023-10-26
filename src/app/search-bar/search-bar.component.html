@@ -8,7 +8,6 @@
     <button mat-raised-button (click)="filterBooks()">Cerca</button>
    -->
 
-
    <div class="search-bar" style="position: absolute; top: 10px; right: 10px;">
     <input
       type="text"
@@ -18,9 +17,10 @@
     />
     <button mat-raised-button (click)="filterBooks()">Cerca</button>
   
-    <ul>
+    <ul *ngIf="searchTerm">
       <li *ngFor="let book of filteredBooks">
         <a [routerLink]="['/detail', book.id]">{{book.title}}</a>
       </li>
     </ul>
   </div>
+  
